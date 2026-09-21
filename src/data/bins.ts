@@ -13,6 +13,8 @@ export type BinInfo = {
   description: string
   hex: string
   accent: string
+  destination: string
+  route: string
   examples: WasteExample[]
 }
 
@@ -24,8 +26,10 @@ export const bins: BinInfo[] = [
     title: 'Residuos orgánicos aprovechables',
     description:
       'Restos de origen natural que pueden convertirse en compost o mejoradores de suelo cuando hay ruta de aprovechamiento.',
-    hex: '#2f8f4e',
-    accent: '#1f6b38',
+    hex: '#00875A',
+    accent: '#006b49',
+    destination: 'Va a una ruta de aprovechamiento orgánico: compostaje o transformación en abono.',
+    route: 'Caneca verde → recolección diferenciada → planta de compostaje → suelo fértil.',
     examples: [
       { name: 'Cáscaras de frutas', hint: 'Banano, naranja, mango' },
       { name: 'Cáscaras de verduras', hint: 'Papa, zanahoria, cebolla' },
@@ -42,8 +46,10 @@ export const bins: BinInfo[] = [
     title: 'Residuos aprovechables',
     description:
       'Materiales reciclables que deben ir limpios y secos para reincorporarse a ciclos productivos: plástico, vidrio, metales, papel, cartón y multicapa.',
-    hex: '#f4f7fb',
+    hex: '#F5F5F5',
     accent: '#c9d4e3',
+    destination: 'Va a una estación de clasificación y luego a recicladores y empresas que lo transforman en nuevos productos.',
+    route: 'Caneca blanca → reciclador de oficio → clasificación → industria → nuevo producto.',
     examples: [
       { name: 'Plástico', hint: 'Botellas y envases limpios' },
       { name: 'Vidrio', hint: 'Frascos y botellas' },
@@ -60,8 +66,10 @@ export const bins: BinInfo[] = [
     title: 'Residuos no aprovechables',
     description:
       'Materiales que no se reciclan en la ruta ordinaria y van a disposición final. No mezclar con aprovechables ni con orgánicos.',
-    hex: '#2a2d33',
-    accent: '#111318',
+    hex: '#1C1C1C',
+    accent: '#111111',
+    destination: 'Va al relleno sanitario La Pradera para disposición final controlada. ¡Por eso es la caneca que debemos reducir!',
+    route: 'Caneca negra → recolección ordinaria → estación de transferencia → relleno sanitario La Pradera.',
     examples: [
       { name: 'Papel higiénico', hint: 'Usado' },
       { name: 'Servilletas', hint: 'Sucias o húmedas' },

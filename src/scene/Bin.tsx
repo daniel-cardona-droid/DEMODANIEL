@@ -54,6 +54,7 @@ export function Bin({ info, position, selected, onSelect }: BinProps) {
         8,
         delta,
       )
+      group.current.rotation.y = Math.sin(performance.now() * 0.0012 + position[0]) * 0.025
     }
   })
 
@@ -75,7 +76,25 @@ export function Bin({ info, position, selected, onSelect }: BinProps) {
       }}
     >
       <group ref={group}>
-        <mesh position={[0, 0.72, 0]} material={bodyMat} castShadow receiveShadow>
+        <mesh
+          position={[0, 0.72, 0]}
+          material={bodyMat}
+          castShadow
+          receiveShadow
+          onClick={(e) => {
+            e.stopPropagation()
+            onSelect()
+          }}
+          onPointerOver={(e) => {
+            e.stopPropagation()
+            setHovered(true)
+            document.body.style.cursor = 'pointer'
+          }}
+          onPointerOut={() => {
+            setHovered(false)
+            document.body.style.cursor = 'auto'
+          }}
+        >
           <cylinderGeometry args={[0.52, 0.42, 1.28, 32]} />
         </mesh>
         <mesh position={[0, 1.34, 0]} material={trimMat} castShadow>
@@ -115,6 +134,16 @@ export function Bin({ info, position, selected, onSelect }: BinProps) {
           maxWidth={0.38}
         >
           {info.colorName.toUpperCase()}
+        </Text>
+        <Text
+          position={[0, 1.62, 0]}
+          fontSize={0.075}
+          color={info.accent}
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={1.2}
+        >
+          {selected ? '¡DESCÚBREME!' : 'TOCA PARA SABER MÁS'}
         </Text>
       </group>
     </group>

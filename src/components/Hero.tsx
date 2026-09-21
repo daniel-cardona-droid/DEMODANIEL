@@ -5,17 +5,33 @@ type HeroProps = {
 export function Hero({ onExplore }: HeroProps) {
   return (
     <section className="hero-screen">
-      <p className="brand">Programa de Alimentación Escolar</p>
+      <div className="hero-art" aria-hidden="true">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=85" alt="" />
+        <span className="hero-orbit orbit-one">♻️</span>
+        <span className="hero-orbit orbit-two">🌱</span>
+        <span className="hero-orbit orbit-three">💧</span>
+        <div className="hero-art-caption"><b>Tu planeta</b><small>es tu misión diaria</small></div>
+      </div>
+      <div className="hero-badge">PRAE · Medellín</div>
       <h1>
-        Aprende a <em>APRENDER CON EL PAE</em>
+        El planeta no tiene <em>un botón de reinicio</em>
       </h1>
       <p className="lead">
-        Una demo visual para separar residuos con las tres canecas del código de
-        colores de Colombia y cuidar el comedor, el colegio y el planeta.
+        Convierte la separación de residuos en una misión. Descubre qué ocurre
+        después de cada caneca, conoce el viaje de la basura de Medellín y
+        activa tu poder como agente ambiental.
       </p>
-      <button type="button" className="cta" onClick={onExplore}>
-        Explorar las canecas
-      </button>
+      <div className="hero-actions">
+        <button type="button" className="cta" onClick={onExplore}>Jugar: explorar las canecas →</button>
+        <a className="text-link" href="https://www.medellin.gov.co/es/secretaria-medio-ambiente/" target="_blank" rel="noreferrer">
+          Conoce el PRAE en Medellín ↗
+        </a>
+      </div>
+      <div className="hero-facts" aria-label="Datos rápidos">
+        <span><strong>3</strong> colores</span>
+        <span><strong>1</strong> decisión diaria</span>
+        <span><strong>∞</strong> futuros posibles</span>
+      </div>
     </section>
   )
 }
