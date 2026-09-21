@@ -20,8 +20,8 @@ export default function App() {
         />
       )}
       <footer className="pae-footer">
-        <span>Aprende a APRENDER CON EL PAE</span>
-        <small>Resolución 2184 de 2019 · Residuos peligrosos van a puntos especiales</small>
+        <span>🌎 PRAE Medellín · Misión: menos residuos, más futuro</span>
+        <small>Resolución 2184 de 2019 · Peligrosos y electrónicos: puntos especiales</small>
       </footer>
     </div>
   )
